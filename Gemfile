@@ -27,6 +27,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Use Cloudinary
+gem 'cloudinary', '~> 1.16.0'
+
 # LW frontend
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'

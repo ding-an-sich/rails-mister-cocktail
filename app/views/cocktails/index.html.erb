@@ -1,11 +1,14 @@
 <div class="cards m-3">
   <% @cocktails.each do |cocktail| %>
     <%= link_to cocktail_path(cocktail.id), style: 'text-decoration: none;' do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url( <%= image_path "rabo-de-galo.jpg" %> )">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url( <%= photo_check(cocktail) %> )">
         <%= cocktail.name %>
       </div>
     <% end %>
   <% end %>
 </div>
 
+<%= cl_image_tag("jttlwzaabcv7qmogsi4t", width: 150, height: 120)%>
+
 <%= link_to 'Create cocktail', new_cocktail_path, class: "btn btn-primary ml-3" %>
+
