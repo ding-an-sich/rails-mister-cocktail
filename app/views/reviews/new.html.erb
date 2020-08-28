@@ -1,4 +1,6 @@
 <%= simple_form_for [@cocktail, @review] do |f| %>
-  <%= f.input :rating %>
+  <%= f.collection_radio_buttons :rating, [[5], [4], [3], [2], [1]], :first, :last do |b| %>
+    <%= b.radio_button + b.label {labelize(b.value.to_s)} %>
+  <% end %>
   <%= f.submit %>
 <% end %>

@@ -15,8 +15,10 @@ module CocktailsHelper
   end
 
   def review_average(reviews)
-    return 0 if reviews.length == 0
+    return 0 if reviews.empty?
 
-    reviews.sum(:rating) / reviews.length
+    prop_array = []
+    prop_array << reviews.sum(:rating) / reviews.length
+    prop_array << 5 - prop_array[0]
   end
 end

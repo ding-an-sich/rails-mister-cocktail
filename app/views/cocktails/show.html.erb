@@ -1,3 +1,4 @@
+<% review_props = review_average(@cocktail.reviews) %>
 <h2> <%= @cocktail.name %> </h2>
 <div class="container">
 <%= photo_check_tag(@cocktail) %>
@@ -8,9 +9,14 @@
     <%= link_to 'X', dose_path(dose.id), method: :delete %>
   </li>
 <% end %>
-<p>Average rating: <% review_average(@cocktail.reviews).times do %>
-  <%= '⭐' %>
-  <% end %></p>
+<p>
+  Average rating: <% review_props[0].times do %>
+    <span>🥃</span>
+  <% end %>
+  <% review_props[1].times do %>
+    <span>🥛</span>
+  <% end %>
+</p>
 <%= link_to 'Edit recipe', new_cocktail_dose_path(@cocktail.id) %>
 <%= link_to 'Write a review', new_cocktail_review_path(@cocktail.id) %>
 <%= link_to 'Back', root_path %>
