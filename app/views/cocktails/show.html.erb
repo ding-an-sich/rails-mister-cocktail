@@ -1,4 +1,4 @@
-<% review_props = review_average(@cocktail.reviews) %>
+<% review_props = review_average(@cocktail.reviews) %> <!-- We do this so the db gets queried only once -->
 <h2> <%= @cocktail.name %> </h2>
 <div class="container">
 <%= photo_check_tag(@cocktail) %>

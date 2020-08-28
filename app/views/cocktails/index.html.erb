@@ -2,7 +2,14 @@
   <% @cocktails.each do |cocktail| %>
     <%= link_to cocktail_path(cocktail.id), style: 'text-decoration: none;' do %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url( <%= photo_check_path(cocktail) %> )">
-        <%= cocktail.name %>
+        <div style="padding: 5px;">
+          <%= cocktail.name %>
+          <% review_props = review_average(cocktail.reviews) %>
+          <% review_props[0].times do %>
+              <span>⭐</span>
+            <% end %>
+            (<%= cocktail.reviews.length %> ratings)
+        </div>
       </div>
     <% end %>
   <% end %>
