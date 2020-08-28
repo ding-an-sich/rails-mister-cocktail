@@ -8,6 +8,10 @@
     <%= link_to 'X', dose_path(dose.id), method: :delete %>
   </li>
 <% end %>
+<p>Average rating: <% review_average(@cocktail.reviews).times do %>
+  <%= '⭐' %>
+  <% end %></p>
 <%= link_to 'Edit recipe', new_cocktail_dose_path(@cocktail.id) %>
+<%= link_to 'Write a review', new_cocktail_review_path(@cocktail.id) %>
 <%= link_to 'Back', root_path %>
 </div>

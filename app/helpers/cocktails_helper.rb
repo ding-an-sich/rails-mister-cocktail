@@ -13,4 +13,10 @@ module CocktailsHelper
 
     image_tag('rabo-de-galo.jpg', class: 'img-cock')
   end
+
+  def review_average(reviews)
+    return 0 if reviews.length == 0
+
+    reviews.sum(:rating) / reviews.length
+  end
 end
