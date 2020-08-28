@@ -1,7 +1,7 @@
 <div class="cards m-3">
   <% @cocktails.each do |cocktail| %>
     <%= link_to cocktail_path(cocktail.id), style: 'text-decoration: none;' do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://img.estadao.com.br/fotos/crop/960x540/resources/jpg/8/4/1532639430348.jpg)">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url( <%= image_path "rabo-de-galo.jpg" %> )">
         <%= cocktail.name %>
       </div>
     <% end %>
