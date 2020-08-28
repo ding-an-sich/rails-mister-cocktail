@@ -1,6 +1,6 @@
 require 'json'
 require 'open-uri'
-require 'pry-byebug'
+# require 'pry-byebug' --> Not used in deployment/production
 
 url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 cocktails_json = JSON.parse(URI.parse(url).read)
